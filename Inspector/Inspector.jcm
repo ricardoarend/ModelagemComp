@@ -1,0 +1,32 @@
+/*
+    JaCaMo Project File
+
+    This file defines the initial state of the MAS (initial agents, environment, organisation, ....)
+*/
+
+mas inspector {
+
+    agent ins1 : inspector.asl 
+    agent soy1 : soyp.asl
+    agent soy2 : soyp.asl
+    agent soy3 : soyp.asl
+    agent soy4 : soyp.asl   
+  	agent ric1 : ricep.asl
+    agent ani1 : animalp.asl
+    agent ani2 : animalp.asl
+
+    organisation insporg: insp.xml {
+        group gorim: gorim {
+            responsible-for: s1
+            players: ins1 inspector             		           		 
+                     soy1 soyp
+                     soy2 soyp
+                     soy3 soyp
+                     soy4 soyp
+                     ric1 ricep
+                     ani1 animalp
+                     ani2 animalp
+        }
+        scheme s1: inspSch
+    }    
+}

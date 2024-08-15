@@ -1,0 +1,42 @@
+/*
+    JaCaMo Project File
+
+    This file defines the initial state of the MAS (initial agents, environment, organisation, ....)
+*/
+
+mas soccerteam {
+
+    agent gk : goalk.asl 
+    agent bk1 : back.asl
+    agent bk2 : back.asl
+    agent bk3 : back.asl
+    agent md1 : middle.asl
+    agent md2 : middle.asl
+    agent md3 : middle.asl
+    agent md4 : middle.asl
+    agent at1 : attacker.asl
+    agent at2 : attacker.asl
+  
+					  
+    organisation storg: soccer.xml {
+        group defense: defense {
+            responsible-for: s1
+            players: gk goalk             		           		 
+                     bk1 back
+                     bk2 back
+                     bk3 back                                      
+        }
+        group attack: attack {
+            responsible-for: s1
+            players: md1 middle
+            		 md2 middle
+            		 md3 middle
+            		 md4 middle
+                     at1 attacker
+                     at2 attacker                                       
+        }
+        
+       
+        scheme s1: marcarGol
+    }   
+}
